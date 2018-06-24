@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: drepy4pbm
+  api_key: '713458318778446'
+  api_secret: 1WVH2xUO00jLgFVlvnTmfKKTGyg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: drepy4pbm
+  api_key: '713458318778446'
+  api_secret: 1WVH2xUO00jLgFVlvnTmfKKTGyg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: drepy4pbm
+  api_key: '713458318778446'
+  api_secret: 1WVH2xUO00jLgFVlvnTmfKKTGyg
+  enhance_image_tag: true
+  static_image_support: false

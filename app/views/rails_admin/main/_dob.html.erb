@@ -1,0 +1,8 @@
+<%= form.text_field :dob, class: "datepicker form-control",name: "user[dob]"%>
+<script type="text/javascript">
+    $(function () {
+    	var date = new Date();
+        date.setDate(date.getDate()-6575);
+        $(".datepicker").datetimepicker({ maxDate: date ,format: "MMMM DD, YYYY"});        	
+    });
+</script>

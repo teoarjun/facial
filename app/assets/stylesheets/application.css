@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/**/
+
+
+.form-logins{max-width:600px; width:100%; margin:15em auto 0; border:1px solid #ddd; padding:1em;}
+.form-logins label{text-align:right;}
+.form-logins h2.blk-titles{border-bottom: 1px solid #ddd;  color: #3071a9;
+    font-size: 24px;  font-weight: bold;  margin: 0 -0.5em 1em;
+    padding: 0 0 10px;  text-align: center;}
+.form-logins .inputcol-s input{height:40px;  width:90%;}
+.form-logins .form-check a{float:right; padding:0 3em 0 0;}
+.signin-btn-s{margin: 0 0 0 11em;}
+
+
+.form-logins .form-check a {
+    float: right;
+    padding: 1em 3em 0 0;
+}
+
+@import url(http://fonts.googleapis.com/css?family=BenchNine:300,400,700);
+body {
+	background-color: #FFFFFF;
+	/*margin-left: 32px;
+	margin-top: 20px;
+	margin-right: 20px;*/
+	margin-bottom: 20px;
+	font-family: 'BenchNine', sans-serif;
+	font-size: 14px;
+	/*line-height:16px;*/
+}
+
+hr{
+   border: 1px solid #FFFFFF;
+}
+
+a:link{
+	color:#0055CC;
+}
+a:visited{
+		color:#990099;
+}
+a:hover{
+		color:#CC0000;
+}
+
+th{
+	background-color:#FFFFFF;
+ 	font-weight:bold;
+}
+
+td{
+	background-color:#ecf7fe;
+ 	text-align:center;
+}
+
+.navbar-inverse {
+    background-color: #37bc9b;
+    border-bottom: 1px solid #37bc9b;
+}
+
+
+@media only screen and (min-width:320px) and (max-width: 767px){
+	.form-logins{margin:10em auto 0;}
+	.form-logins .inputcol-s input{width:100%;}
+	.form-logins .form-check a {line-height: 40px; padding:0;}
+	.signin-btn-s {margin: 0;  text-align: center;}
+}

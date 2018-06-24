@@ -1,0 +1,50 @@
+.error {
+  color: red !important;
+}
+
+#new_admin_user a:first-child{display:none;}
+
+
+.breadcrumb > li + li:after {
+  content: "/ ";
+  padding: 0 5px;
+  color: #ccc;
+}
+
+.breadcrumb > li + li:before {
+  content: "";
+  padding: 0;
+}
+
+.btn-info {
+	display: none !important;
+}
+
+.edit_user_root_link{
+	display: none;
+}
+.sub-menu-container .li:first-child {
+  display: none;
+}
+body.rails_admin .form-horizontal textarea {
+    width: -moz-available;
+}
+.align-image img {
+    height: 100%;
+}
+.align-image{background:none; padding:0!important;}
+.sidebar-nav{border-top:1px solid #168569;}
+.sub-menu-container li.active a:hover, .sub-menu-container li a:hover {color:#97F6DE!important;}
+.ui-tooltip, .ui-helper-hidden-accessible {display:none!important;}
+.breadcrumb > li + li::after {
+    display: none;
+}
+
+body.rails_admin .form-horizontal input {
+    width: 48% !important;
+}
+.form-horizontal textarea {
+    width: 100% !important;
+}
+a.navbar-brand{background:transparent !important;}
+a.navbar-brand:hover{background:transparent !important;}

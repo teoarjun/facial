@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photo: MyString
+  facial_response: 
+  story: one
+
+two:
+  photo: MyString
+  facial_response: 
+  story: two

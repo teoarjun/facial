@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body easypiechart-panel">
+        <h4>Total Number Of Active Users <b class = "size-alignment"><%= User.active_user.count %></b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body easypiechart-panel">
+        <h4>Total Number Of Users &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class = "size-alignment"><%= User.all.count%></b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body easypiechart-panel">
+        <h4>Total Number Facebook Users<b class = "size-alignment"><%= SocialLogin.where(provider: "facebook").count%></b></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body easypiechart-panel">
+        <h4>Total Number Twitter Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class = "size-alignment"><%= SocialLogin.where(provider: "twitter").count%></b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body easypiechart-panel">
+       <h4>Total Number Google+ Users<b class = "size-alignment"><%= SocialLogin.where(provider: "google").count %></b></h4>
+      </div>
+    </div>
+  </div>
+</div>
+    <%#= bar_chart k2: {key1: 1} %>
+    <%#= column_chart User.all.group_by(&:gender).count %>
+    <!-- <input id="country_list" value= <%#= User.pluck(:country).compact.uniq %> type="hidden"> -->
+
+
+<style type="text/css">
+  .size-alignment {
+    margin-left: 14% !important;
+    font-size: 38px !important;;
+    }
+</style>
+
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div id="container"></div>
+<script type="text/javascript">
+  var chart = Highcharts.chart('container', {
+    title: {
+        text: 'Users'
+    },
+    subtitle: {
+        text: 'Plain'
+    },
+    xAxis: {
+        categories: <%#= User.all.map(&:name).to_json.html_safe%>
+    },
+    series: [{
+        type: 'column',
+        colorByPoint: true,
+        data: <%#= User.all.map{|x| [x.id ]}%>,
+        showInLegend: false
+    }]
+});
+
+
+
+
+</script> -->
+<div id="dynamic-section">
+  <%= render template: 'analytics/_index'%>
+</div>
