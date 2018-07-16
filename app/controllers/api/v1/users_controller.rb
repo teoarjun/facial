@@ -42,7 +42,7 @@ end
 		params[:user][:password] = Preventurl.decrypt(params[:user][:password])  rescue (return render_message 500,"Invalid password")
 		params[:user][:email] = Preventurl.decrypt(params[:user][:email]) rescue (return render_message 500, "Invalid email")
 		@user = User.find_by(email: params[:user][:email].downcase)
-		return render_message 500, "User not found." unless  @user
+		return render_message 500, "User not found.".Preventurl.decrypt(params[:user][:password]) unless  @user
 		return render_message 500, "You are blocked by the admin." if @user.activate == false
 		if @user.valid_password?(params[:user][:password])
 			@device = Device.find_or_create_by(device_token: params[:device_token], device_type: params[:device_type], user_id: @user.id)
