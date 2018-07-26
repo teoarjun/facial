@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20170403091600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -120,22 +119,24 @@ ActiveRecord::Schema.define(version: 20170403091600) do
   create_table "stories", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
+    t.integer  "user_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.datetime "time"
     t.string   "location"
     t.string   "status",     default: "public"
-    t.integer  "user_id"
+    t.index ["user_id"], name: "index_stories_on_user_id", using: :btree
   end
 
   create_table "story_tags", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "user_id"
     t.string   "taggable_type"
     t.integer  "taggable_id"
     t.string   "person_id"
     t.string   "tagged_name"
+    t.index ["user_id"], name: "index_story_tags_on_user_id", using: :btree
   end
 
   create_table "user_groups", force: :cascade do |t|
@@ -192,6 +193,8 @@ ActiveRecord::Schema.define(version: 20170403091600) do
   add_foreign_key "likes", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "social_logins", "users"
+  add_foreign_key "stories", "users"
+  add_foreign_key "story_tags", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "users"
   add_foreign_key "view_stories", "stories"
