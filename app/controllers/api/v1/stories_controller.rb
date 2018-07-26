@@ -145,7 +145,7 @@ class Api::V1::StoriesController < ApplicationController
 private
   def story_params
     params[:story][:image] = Story.image_data(params[:story][:image].to_s.gsub("\\r\\n", '')) if params[:story][:image].present?
-    params.require(:story).permit(:name, :image, :time, :location, :status)
+    params.require(:story).permit(:name, :image, :time, :location, :status, :featured)
   end
 
   def tag_users(obj,user_ids)

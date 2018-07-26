@@ -2,7 +2,7 @@ json.responseCode 200
 json.responseMessage 'Stories fetched successfully.'
 @stories.reload
 json.stories @paginatable_array do |story|
-	json.(story, :id, :name, :status, :user_id, :location, :image, :time)
+	json.(story, :id, :name, :status, :user_id, :location, :image, :time, :featured)
 end
 json.pagination do
 	json.page_no @paginatable_array.current_page
